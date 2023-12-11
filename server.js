@@ -115,7 +115,8 @@ app.post("/login", (req, res) => {
                         loginResult: {
                             userId: user.userId,
                             username: user.username,
-                            email: user.email
+                            email: user.email,
+                            picture: user.picture
                         }
                     }
                 )
@@ -181,7 +182,7 @@ app.post('/predict', async (req, res) => {
     }
 });
 
-app.post("/get-recommender", async (req, res) => {
+app.post("/content-recommender", async (req, res) => {
     try {
         const content = req.body.content
         const url = 'https://contentrecommenderv6-2g5ihwq6vq-as.a.run.app/contentrecommender'
