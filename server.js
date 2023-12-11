@@ -185,7 +185,7 @@ app.post('/predict', async (req, res) => {
 app.post("/content-recommender", async (req, res) => {
     try {
         const content = req.body.content
-        const url = 'https://contentrecommenderv6-2g5ihwq6vq-as.a.run.app/contentrecommender'
+        const url = 'https://contentrecommender-earot3fyaq-de.a.run.app/contentrecommender'
         const requestBody = {
             content: content,
         }
