@@ -17,7 +17,7 @@ db.connect((error) => {
     if(error){
         console.log(error)
     }else{
-        console.log("Database Connected")
+        console.log("Database connected")
     }
 })
 
@@ -31,11 +31,10 @@ app.post("/register", (req, res) => {
 
     db.query('SELECT username from users WHERE username = ?', [username], (error, results) => {
         if(error){
-            console.log(error)
             return res.status(500).json({
                 error: true,
                 status: 500,
-                message: "Internal Server Error"
+                message: "Query error"
             })
         }
 
@@ -44,7 +43,7 @@ app.post("/register", (req, res) => {
                 {
                     error: true,
                     status: 409,
-                    message: "Username telah terdaftar"
+                    message: "Username is already taken"
                 }
             )
         }
@@ -54,7 +53,7 @@ app.post("/register", (req, res) => {
                 return res.status(500).json({
                     error: true,
                     status: 500,
-                    message: "Internal Server Error"
+                    message: "Query error"
                 })
             }
     
@@ -62,7 +61,7 @@ app.post("/register", (req, res) => {
                 return res.status(409).json({
                         error: true,
                         status: 409,
-                        message: "Email telah terdaftar"
+                        message: "Email is already in use"
                     }
                 )
             }
@@ -76,13 +75,13 @@ app.post("/register", (req, res) => {
                     return res.status(500).json({
                         error: true,
                         status: 500,
-                        message: "Internal Server Error"
+                        message: "Internal server error"
                     })
                 } else {
                     return res.status(201).json({ 
                             error: false,
                             status: 201,
-                            message: "Berhasil Registrasi"
+                            message: "Registration successful"
                         }
                     )
                 }
@@ -100,7 +99,7 @@ app.post("/login", (req, res) => {
             return res.status(500).json({
                 error: true,
                 status: 500,
-                message: "Internal Server Error"
+                message: "Internal server error"
             })
         }
 
@@ -111,7 +110,7 @@ app.post("/login", (req, res) => {
                 return res.status(201).json({ 
                         error: false,
                         status: 201,
-                        message: "Login Berhasil",
+                        message: "Login successful",
                         loginResult: {
                             userId: user.userId,
                             username: user.username,
@@ -124,14 +123,14 @@ app.post("/login", (req, res) => {
                 return res.status(401).json({
                     error: true,
                     status: 401,
-                    message: "Password Salah"
+                    message: "Password wrong"
                 })
             }
         } else {
             return res.status(401).json({
                 error: true,
                 status: 401,
-                message: "Email Salah"
+                message: "Email wrong"
             })
         }
     })
@@ -158,18 +157,17 @@ app.post('/predict', async (req, res) => {
 
         db.query('INSERT INTO history_prediction SET ?', {historyId:historyId, prediction: response.data.prediction, date: formattedDate, userId: userId}, (error) => {
             if(error){
-                console.log(error)
                 return res.status(500).json({
                     error: true,
                     status: 500,
-                    message: "Gagal Insert Database"
+                    message: "Query error"
                 })
             } else {
                 return res.status(201).json({
                     error: false,
                     status: 201,
                     prediction: response.data.prediction,
-                    message: "Berhasil melakukan request"
+                    message: "Request successful"
                 })
             }
         })
@@ -177,7 +175,7 @@ app.post('/predict', async (req, res) => {
         res.status(500).json({
             error: true,
             status: 500,
-            message: "Terjadi kesalahan saat melakukan permintaan",
+            message: "Internal server error",
         })
     }
 });
@@ -199,7 +197,7 @@ app.post("/content-recommender", async (req, res) => {
         const responseData = {
             statusCode: response.status,
             ...response.data,
-            message: 'Permintaan berhasil',
+            message: 'Request successful',
         };
 
         res.status(201).json(responseData)
@@ -207,10 +205,44 @@ app.post("/content-recommender", async (req, res) => {
         res.status(500).json({
             error: true,
             status: 500,
-            message: "Terjadi kesalahan saat melakukan permintaan",
+            message: "Internal server error",
+        })
+    }
+})
+
+app.get("/history-predict", (req, res) => {
+    try {
+        const userId = req.body.userId;
+
+        db.query('SELECT * FROM history_prediction WHERE userId = ? ORDER BY STR_TO_DATE(date, "%Y-%m-%d") DESC', [userId], (error, result) => {
+            if (error) {
+                return res.status(500).json({
+                    error: true,
+                    status: 500,
+                    message: "Query error"
+                });
+            } else {
+                res.status(200).json({
+                    error: false,
+                    status: 200,
+                    userId: userId,
+                    historyData: result.map(item => ({
+                        historyId: item.historyId,
+                        prediction: item.prediction,
+                        date: item.date,
+                    })),
+                    message: "Request successful"
+                });
+            }
+        });
+    } catch(error) {
+        res.status(500).json({
+            error: true,
+            status: 500,
+            message: "Internal server error",
         })
     }
 })
 
 const PORT = process.env.PORT || 8080
-app.listen(PORT, () => console.log('Server Started'))
+app.listen(PORT, () => console.log('Server started'))
