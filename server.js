@@ -142,13 +142,13 @@ app.post('/predict', async (req, res) => {
         const url = 'https://setpredictionrev-earot3fyaq-de.a.run.app/predict'
         const requestBody = {
             text: mood,
-        };
+        }
 
         const response = await axios.post(url, requestBody, {
             headers: {
                 'Content-Type': 'application/json'
             }
-        });
+        })
 
         const historyId = nanoid(16)
         db.query('INSERT INTO history SET ?', {historyId:historyId, prediction: response.data.prediction, userId: userId}, (error) => {
@@ -176,6 +176,36 @@ app.post('/predict', async (req, res) => {
         })
     }
 });
+
+app.post("/get-recommender", async (req, res) => {
+    try {
+        const content = req.body.content
+        const url = 'https://contentrecommenderv6-2g5ihwq6vq-as.a.run.app/contentrecommender'
+        const requestBody = {
+            content: content,
+        }
+
+        const response = await axios.post(url, requestBody, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+
+        const responseData = {
+            statusCode: response.status,
+            ...response.data,
+            message: 'Permintaan berhasil',
+        };
+
+        res.status(201).json(responseData)
+    } catch (error) {
+        res.status(500).json({
+            error: true,
+            status: 500,
+            message: "Terjadi kesalahan saat melakukan permintaan",
+        })
+    }
+})
 
 const PORT = process.env.PORT || 8080
 app.listen(PORT, () => console.log('Server Started'))
