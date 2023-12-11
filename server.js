@@ -152,10 +152,17 @@ app.post('/predict', async (req, res) => {
         })
 
         const historyId = nanoid(16)
-        const currentDate = new Date()
-        const formattedDate = currentDate.toLocaleDateString('en-CA');
+        const currentDate = new Date();
 
-        db.query('INSERT INTO history_prediction SET ?', {historyId:historyId, prediction: response.data.prediction, date: formattedDate, userId: userId}, (error) => {
+        const year = currentDate.getFullYear();
+        const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Perlu ditambah 1 karena bulan dimulai dari 0
+        const day = currentDate.getDate().toString().padStart(2, '0');
+        const hours = currentDate.getHours().toString().padStart(2, '0');
+        const minutes = currentDate.getMinutes().toString().padStart(2, '0');
+
+        const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}`;
+
+        db.query('INSERT INTO history_prediction SET ?', {historyId:historyId, text:mood, prediction: response.data.prediction, date: formattedDate, userId: userId}, (error) => {
             if(error){
                 return res.status(500).json({
                     error: true,
@@ -212,9 +219,9 @@ app.post("/content-recommender", async (req, res) => {
 
 app.get("/history-predict", (req, res) => {
     try {
-        const userId = req.body.userId;
+        const userId = req.query.userId;
 
-        db.query('SELECT * FROM history_prediction WHERE userId = ? ORDER BY STR_TO_DATE(date, "%Y-%m-%d") DESC', [userId], (error, result) => {
+        db.query('SELECT * FROM history_prediction WHERE userId = ? ORDER BY STR_TO_DATE(date, "%Y-%m-%d %H:%i") DESC', [userId], (error, result) => {
             if (error) {
                 return res.status(500).json({
                     error: true,
@@ -228,6 +235,7 @@ app.get("/history-predict", (req, res) => {
                     userId: userId,
                     historyData: result.map(item => ({
                         historyId: item.historyId,
+                        text: item.text,
                         prediction: item.prediction,
                         date: item.date,
                     })),
