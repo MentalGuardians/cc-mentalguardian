@@ -219,7 +219,7 @@ app.post("/content-recommender", async (req, res) => {
 
 app.get("/history-predict", (req, res) => {
     try {
-        const userId = req.query.userId;
+        const userId = req.query.userId
 
         db.query('SELECT * FROM history_prediction WHERE userId = ? ORDER BY STR_TO_DATE(date, "%Y-%m-%d %H:%i") DESC', [userId], (error, result) => {
             if (error) {
@@ -240,10 +240,44 @@ app.get("/history-predict", (req, res) => {
                         date: item.date,
                     })),
                     message: "Request successful"
-                });
+                })
             }
-        });
+        })
     } catch(error) {
+        res.status(500).json({
+            error: true,
+            status: 500,
+            message: "Internal server error",
+        })
+    }
+})
+
+app.get("/profile", (req, res) => {
+    try {
+        const userId = req.query.userId
+        
+        db.query('SELECT * FROM users WHERE userId = ?', [userId], (error, result) => {
+            if (error) {
+                return res.status(500).json({
+                    error: true,
+                    status: 500,
+                    message: "Query error"
+                });
+            } else {
+                res.status(200).json({
+                    error: false,
+                    status: 200,
+                    userId: userId,
+                    username: result[0].username,
+                    email: result[0].email,
+                    picture: result[0].picture,
+                    phone: result[0].phone,
+                    gender: result[0].gender,
+                    message: "Request successful"
+                })
+            }
+        })
+    } catch (error) {
         res.status(500).json({
             error: true,
             status: 500,
