@@ -69,8 +69,9 @@ app.post("/register", (req, res) => {
             
             const userId = nanoid(16)
             let hashedPassword = await bcrypt.hash(password, 10);
+            const picture = 'https://storage.googleapis.com/mental-guardians-user-picture/user-picture.jpg'
 
-            db.query('INSERT INTO users SET ?', {userId:userId, username: username, password: hashedPassword, email: email}, (error) => {
+            db.query('INSERT INTO users SET ?', {userId:userId, username: username, password: hashedPassword, email: email, picture: picture}, (error) => {
                 if(error){
                     return res.status(500).json({
                         error: true,
@@ -151,7 +152,10 @@ app.post('/predict', async (req, res) => {
         })
 
         const historyId = nanoid(16)
-        db.query('INSERT INTO history SET ?', {historyId:historyId, prediction: response.data.prediction, userId: userId}, (error) => {
+        const currentDate = new Date()
+        const formattedDate = currentDate.toLocaleDateString('en-CA');
+
+        db.query('INSERT INTO history_prediction SET ?', {historyId:historyId, prediction: response.data.prediction, date: formattedDate, userId: userId}, (error) => {
             if(error){
                 console.log(error)
                 return res.status(500).json({
