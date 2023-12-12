@@ -185,7 +185,7 @@ app.post('/predict', async (req, res) => {
             message: "Internal server error",
         })
     }
-});
+})
 
 app.post("/content-recommender", async (req, res) => {
     try {
