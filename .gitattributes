@@ -1,0 +1,3 @@
+# Disable line ending conversion for specific files
+backend-endpoint/package-lock.json -text
+backend-endpoint/package.json -text
