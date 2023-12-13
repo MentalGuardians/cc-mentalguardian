@@ -39,8 +39,7 @@ app.post("/register", (req, res) => {
         }
 
         if(results.length > 0){
-            return res.status(409).json(
-                {
+            return res.status(409).json({
                     error: true,
                     status: 409,
                     message: "Username is already taken"
@@ -320,11 +319,26 @@ app.put("/profile", (req, res) => {
     try {
         const userId = req.query.userId
 
+        let usernameCurrent, emailCurrent
+
         const username = req.body.username
         const password = req.body.password
         const email = req.body.email
         const phone = req.body.phone
         const alamat = req.body.alamat
+
+        db.query('SELECT username, email from users WHERE userId = ?', [userId], (error, results) => {
+            if(error){
+                return res.status(500).json({
+                    error: true,
+                    status: 500,
+                    message: "Query error"
+                })
+            }else{
+                usernameCurrent = results[0].username
+                emailCurrent = results[0].email
+            }
+        })
 
         db.query('SELECT username from users WHERE username = ?', [username], (error, results) => {
             if(error){
@@ -335,14 +349,14 @@ app.put("/profile", (req, res) => {
                 })
             }
     
-            if(results.length > 1){
-                return res.status(409).json(
-                    {
+            if(results.length > 0){
+                if(username !== usernameCurrent){
+                    return res.status(409).json({
                         error: true,
                         status: 409,
                         message: "Username is already taken"
-                    }
-                )
+                    })
+                }
             }
 
             db.query('SELECT email from users WHERE email = ?', [email], async (error, results) => {
@@ -354,13 +368,14 @@ app.put("/profile", (req, res) => {
                     })
                 }
         
-                if(results.length > 1){
-                    return res.status(409).json({
+                if(results.length > 0){
+                    if(email !== emailCurrent){
+                        return res.status(409).json({
                             error: true,
                             status: 409,
-                            message: "Email is already in use"
-                        }
-                    )
+                            message: "Email is already taken"
+                        })
+                    }
                 }
 
                 let hashedPassword = await bcrypt.hash(password, 10);
@@ -384,6 +399,99 @@ app.put("/profile", (req, res) => {
         })
     } catch (error) {
         return res.status(500).json({
+            error: true,
+            status: 500,
+            message: "Internal server error",
+        })
+    }
+})
+
+app.post('/booking', async (req, res) => {
+    try {
+        const userId = req.body.userId
+        const teraphistId = req.body.therapistId
+        const tanggal_konseling = req.body.tanggal_konseling
+        const jam_konseling = req.body.jam_konseling
+        const jenis_konseling = req.body.jenis_konseling
+
+        const bookingId = nanoid(16)
+
+        const currentDate = new Date();
+        const year = currentDate.getFullYear();
+        const month = (currentDate.getMonth() + 1).toString().padStart(2, '0'); // Perlu ditambah 1 karena bulan dimulai dari 0
+        const day = currentDate.getDate().toString().padStart(2, '0');
+        const hours = currentDate.getHours().toString().padStart(2, '0');
+        const minutes = currentDate.getMinutes().toString().padStart(2, '0');
+        const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}`;
+
+        let link = "meet.google.com/ozg-zmqx-fdk"
+        if(jenis_konseling == "Offline" || jenis_konseling == "offline" || jenis_konseling == "OFFLINE"){
+            link = null
+        }
+        let statusTemp = req.body.status
+        let status = "active"
+        if(statusTemp == 0){
+            status = "cancel"
+        }
+
+        db.query('INSERT INTO history_booking SET ?', {bookingId:bookingId, tanggal_booking: formattedDate, tanggal_konseling: tanggal_konseling, jam_konseling: jam_konseling, jenis_konseling : jenis_konseling, link: link, status: status, userId: userId, therapistId: teraphistId}, (error) => {
+            if(error){
+                console.log(error)
+                return res.status(500).json({
+                    error: true,
+                    status: 500,
+                    message: "Query error"
+                })
+            } else {
+                return res.status(201).json({
+                    error: false,
+                    status: 201,
+                    bookingId: bookingId,
+                    message: "Request successful"
+                })
+            }
+        })
+    } catch (error) {
+        res.status(500).json({
+            error: true,
+            status: 500,
+            message: "Internal server error",
+        })
+    }
+})
+
+app.get("/booking", (req, res) => {
+    try {
+        const userId = req.query.userId
+
+        db.query('SELECT * FROM history_booking WHERE userId = ? ', [userId], (error, result) => {
+            if (error) {
+                return res.status(500).json({
+                    error: true,
+                    status: 500,
+                    message: "Query error"
+                })
+            } else {
+                res.status(200).json({
+                    error: false,
+                    status: 200,
+                    userId: userId,
+                    historyBooking: result.map(item => ({
+                        bookingId: item.bookingId,
+                        tanggal_booking: item.tanggal_booking,
+                        tanggal_konseling: item.tanggal_konseling,
+                        jam_konseling: item.jam_konseling,
+                        jenis_konseling: item.jenis_konseling,
+                        link: item.link,
+                        status: item.status === "active" ? 1 : 0,
+                        therapistId: item.therapistId
+                    })),
+                    message: "Request successful"
+                })
+            }
+        })
+    } catch(error) {
+        res.status(500).json({
             error: true,
             status: 500,
             message: "Internal server error",
