@@ -179,7 +179,7 @@ app.post('/predict', async (req, res) => {
             }
         })
     } catch (error) {
-        res.status(500).json({
+        return res.status(500).json({
             error: true,
             status: 500,
             message: "Internal server error",
@@ -205,11 +205,11 @@ app.post("/content-recommender", async (req, res) => {
             statusCode: response.status,
             ...response.data,
             message: 'Request successful',
-        };
+        }
 
-        res.status(201).json(responseData)
+        return res.status(201).json(responseData)
     } catch (error) {
-        res.status(500).json({
+        return res.status(500).json({
             error: true,
             status: 500,
             message: "Internal server error",
@@ -217,7 +217,37 @@ app.post("/content-recommender", async (req, res) => {
     }
 })
 
-app.get("/history-predict", (req, res) => {
+app.post("/expert-recommender", async (req, res) => {
+    try {
+        const expert = req.body.expert
+        const url = 'https://expertrecommender-earot3fyaq-de.a.run.app/expertrecommender'
+        const requestBody = {
+            expert: expert,
+        }
+
+        const response = await axios.post(url, requestBody, {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+
+        const responseData = {
+            statusCode: response.status,
+            ...response.data,
+            message: 'Request successful',
+        }
+
+        return res.status(201).json(responseData)
+    } catch (error) {
+        return res.status(500).json({
+            error: true,
+            status: 500,
+            message: "Internal server error",
+        })
+    }
+})
+
+app.get("/predict", (req, res) => {
     try {
         const userId = req.query.userId
 
@@ -227,9 +257,9 @@ app.get("/history-predict", (req, res) => {
                     error: true,
                     status: 500,
                     message: "Query error"
-                });
+                })
             } else {
-                res.status(200).json({
+                return res.status(200).json({
                     error: false,
                     status: 200,
                     userId: userId,
@@ -244,7 +274,7 @@ app.get("/history-predict", (req, res) => {
             }
         })
     } catch(error) {
-        res.status(500).json({
+        return res.status(500).json({
             error: true,
             status: 500,
             message: "Internal server error",
@@ -262,9 +292,9 @@ app.get("/profile", (req, res) => {
                     error: true,
                     status: 500,
                     message: "Query error"
-                });
+                })
             } else {
-                res.status(200).json({
+                return res.status(200).json({
                     error: false,
                     status: 200,
                     userId: userId,
@@ -278,7 +308,82 @@ app.get("/profile", (req, res) => {
             }
         })
     } catch (error) {
-        res.status(500).json({
+        return res.status(500).json({
+            error: true,
+            status: 500,
+            message: "Internal server error",
+        })
+    }
+})
+
+app.put("/profile", (req, res) => {
+    try {
+        const userId = req.query.userId
+
+        const username = req.body.username
+        const password = req.body.password
+        const email = req.body.email
+        const phone = req.body.phone
+        const alamat = req.body.alamat
+
+        db.query('SELECT username from users WHERE username = ?', [username], (error, results) => {
+            if(error){
+                return res.status(500).json({
+                    error: true,
+                    status: 500,
+                    message: "Query error"
+                })
+            }
+    
+            if(results.length > 1){
+                return res.status(409).json(
+                    {
+                        error: true,
+                        status: 409,
+                        message: "Username is already taken"
+                    }
+                )
+            }
+
+            db.query('SELECT email from users WHERE email = ?', [email], async (error, results) => {
+                if(error){
+                    return res.status(500).json({
+                        error: true,
+                        status: 500,
+                        message: "Query error"
+                    })
+                }
+        
+                if(results.length > 1){
+                    return res.status(409).json({
+                            error: true,
+                            status: 409,
+                            message: "Email is already in use"
+                        }
+                    )
+                }
+
+                let hashedPassword = await bcrypt.hash(password, 10);
+                db.query('UPDATE users SET username = ?, password = ?, email = ?, phone = ?, alamat = ? WHERE userId = ?', [username, hashedPassword, email, phone, alamat, userId], (error, result) => {
+                    if (error) {
+                        return res.status(500).json({
+                            error: true,
+                            status: 500,
+                            message: "Query error",
+                        })
+                    } else {
+                        return res.status(200).json({
+                            error: false,
+                            status: 200,
+                            message: "Data updated successfully",
+                            updatedUserId: userId,
+                        })
+                    }
+                })
+            })
+        })
+    } catch (error) {
+        return res.status(500).json({
             error: true,
             status: 500,
             message: "Internal server error",
