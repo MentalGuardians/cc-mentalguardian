@@ -242,7 +242,6 @@ app.post("/content-recommender", async (req, res) => {
     }
 })
 
-
 app.post("/expert-recommender", async (req, res) => {
     try {
         const expert = req.body.expert
@@ -478,11 +477,7 @@ app.post('/booking', async (req, res) => {
         if(jenis_konseling == "Offline" || jenis_konseling == "offline" || jenis_konseling == "OFFLINE"){
             link = null
         }
-        let statusTemp = req.body.status
         let status = "active"
-        if(statusTemp == 0){
-            status = "cancel"
-        }
 
         db.query('INSERT INTO history_booking SET ?', {bookingId:bookingId, tanggal_booking: formattedDate, tanggal_konseling: tanggal_konseling, jam_konseling: jam_konseling, jenis_konseling : jenis_konseling, link: link, status: status, userId: userId, therapistId: teraphistId}, (error) => {
             if(error){
