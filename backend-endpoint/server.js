@@ -192,25 +192,46 @@ app.post("/content-recommender", async (req, res) => {
         const url = 'https://contentrecommenderrev-earot3fyaq-de.a.run.app/contentrecommender';
         const requestBody = {
             content: content,
-        };
+        }
 
         const response = await axios.post(url, requestBody, {
             headers: {
                 'Content-Type': 'application/json'
             }
+        })
+
+        const cleanedResponse = response.data.replace(/NaN/g, 'null')
+        const responseData = JSON.parse(cleanedResponse)
+        
+        let contentIds = []
+
+        const queryPromises = responseData.result.map(async (result) => {
+            return new Promise((resolve, reject) => {
+                db.query('SELECT contentId FROM contents WHERE `Video ID` = ?', [result["Video ID"]], (error, resultQuery) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        const contentId = resultQuery[0].contentId;
+                        contentIds.push(contentId);
+                        resolve();
+                    }
+                });
+            });
         });
+    
+        // Menunggu semua operasi query selesai
+        await Promise.all(queryPromises);
 
-        // Menghilangkan karakter escape sebelum parsing JSON
-        const cleanedResponse = response.data.replace(/NaN/g, 'null');
-        // Mengonversi string JSON yang sudah dibersihkan menjadi objek JavaScript
-        const responseData = JSON.parse(cleanedResponse);
+        for (let i = 0; i < responseData.result.length; i++) {
+            responseData.result[i].contentId = contentIds[i];
+        }
 
-        // Mengirimkan respons dengan objek JavaScript yang sudah diubah
         const responseFinal = {
             statusCode: response.status,
             ...responseData,
             message: 'Request successful',
         }
+
         return res.status(201).json(responseFinal);
     } catch (error) {
         return res.status(500).json({
