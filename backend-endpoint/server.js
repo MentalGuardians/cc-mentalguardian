@@ -257,6 +257,29 @@ app.post("/expert-recommender", async (req, res) => {
             }
         })
 
+        let therapistIds = []
+
+        const queryPromises = response.data.result.map(async (result) => {
+            return new Promise((resolve, reject) => {
+                db.query('SELECT therapistId FROM therapists WHERE Name = ?', [result["Name"]], (error, resultQuery) => {
+                    if (error) {
+                        reject(error);
+                    } else {
+                        const therapistId = resultQuery[0].therapistId;
+                        therapistIds.push(therapistId);
+                        resolve();
+                    }
+                });
+            });
+        });
+    
+        // Menunggu semua operasi query selesai
+        await Promise.all(queryPromises);
+
+        for (let i = 0; i < response.data.result.length; i++) {
+            response.data.result[i].therapistId = therapistIds[i];
+        }
+
         const responseData = {
             statusCode: response.status,
             ...response.data,
