@@ -186,6 +186,41 @@ app.post('/predict', async (req, res) => {
     }
 })
 
+app.get("/predict", (req, res) => {
+    try {
+        const userId = req.query.userId
+
+        db.query('SELECT * FROM history_prediction WHERE userId = ? ORDER BY STR_TO_DATE(date, "%Y-%m-%d %H:%i") DESC', [userId], (error, result) => {
+            if (error) {
+                return res.status(500).json({
+                    error: true,
+                    status: 500,
+                    message: "Query error"
+                })
+            } else {
+                return res.status(200).json({
+                    error: false,
+                    status: 200,
+                    userId: userId,
+                    historyData: result.map(item => ({
+                        historyId: item.historyId,
+                        text: item.text,
+                        prediction: item.prediction,
+                        date: item.date,
+                    })),
+                    message: "Request successful"
+                })
+            }
+        })
+    } catch(error) {
+        return res.status(500).json({
+            error: true,
+            status: 500,
+            message: "Internal server error",
+        })
+    }
+})
+
 app.post("/content-recommender", async (req, res) => {
     try {
         const content = req.body.content;
@@ -209,11 +244,11 @@ app.post("/content-recommender", async (req, res) => {
             return new Promise((resolve, reject) => {
                 db.query('SELECT contentId FROM contents WHERE `Video ID` = ?', [result["Video ID"]], (error, resultQuery) => {
                     if (error) {
-                        reject(error);
+                        reject(error)
                     } else {
-                        const contentId = resultQuery[0].contentId;
-                        contentIds.push(contentId);
-                        resolve();
+                        const contentId = resultQuery[0].contentId
+                        contentIds.push(contentId)
+                        resolve()
                     }
                 });
             });
@@ -312,9 +347,9 @@ app.post("/expert-recommender", async (req, res) => {
                         therapistIds.push(therapistId);
                         resolve();
                     }
-                });
-            });
-        });
+                })
+            })
+        })
     
         // Menunggu semua operasi query selesai
         await Promise.all(queryPromises);
@@ -378,41 +413,6 @@ app.get("/expert-recommender", (req, res) => {
             }
         })
     }catch (error){
-        return res.status(500).json({
-            error: true,
-            status: 500,
-            message: "Internal server error",
-        })
-    }
-})
-
-app.get("/predict", (req, res) => {
-    try {
-        const userId = req.query.userId
-
-        db.query('SELECT * FROM history_prediction WHERE userId = ? ORDER BY STR_TO_DATE(date, "%Y-%m-%d %H:%i") DESC', [userId], (error, result) => {
-            if (error) {
-                return res.status(500).json({
-                    error: true,
-                    status: 500,
-                    message: "Query error"
-                })
-            } else {
-                return res.status(200).json({
-                    error: false,
-                    status: 200,
-                    userId: userId,
-                    historyData: result.map(item => ({
-                        historyId: item.historyId,
-                        text: item.text,
-                        prediction: item.prediction,
-                        date: item.date,
-                    })),
-                    message: "Request successful"
-                })
-            }
-        })
-    } catch(error) {
         return res.status(500).json({
             error: true,
             status: 500,
@@ -633,6 +633,27 @@ app.get("/booking", (req, res) => {
             message: "Internal server error",
         })
     }
+})
+
+app.put("/booking", (req, res) => {
+    const bookingId = req.query.bookingId
+
+    db.query('UPDATE history_booking SET status = ? WHERE bookingId = ?', ["cancel", bookingId], (error, result) => {
+        if (error) {
+            return res.status(500).json({
+                error: true,
+                status: 500,
+                message: "Query error",
+            })
+        } else {
+            return res.status(200).json({
+                error: false,
+                status: 200,
+                message: "Booking canceled",
+                bookingId: bookingId,
+            })
+        }
+    })
 })
 
 const PORT = process.env.PORT || 8080
