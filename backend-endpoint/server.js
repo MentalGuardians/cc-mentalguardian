@@ -339,6 +339,53 @@ app.post("/expert-recommender", async (req, res) => {
     }
 })
 
+app.get("/expert-recommender", (req, res) => {
+    try{
+        const therapistId = req.query.therapistId
+
+        db.query('SELECT * FROM therapists WHERE therapistId = ?', [therapistId], (error, result) => {
+            if(error){
+                return res.status(500).json({
+                    error: true,
+                    status: 500,
+                    message: "Query error"
+                })
+            }else{
+                if(result.length > 0){
+                    return res.status(200).json({
+                        error: false,
+                        status: 200,
+                        therapistId: therapistId,
+                        name: result[0].Name,
+                        age: result[0].Age,
+                        status: result[0].Status,
+                        price: result[0].Price,
+                        method: result[0].Methods,
+                        userViewed: result[0]["User Viewed"],
+                        rating: result[0].Rating,
+                        category: result[0].Category,
+                        domicile: result[0].Domicile,
+                        gender: result[0].Gender,
+                        message: "Request successful"
+                    })
+                }else{
+                    return res.status(500).json({
+                        error: true,
+                        status: 500,
+                        message: "Expert not found"
+                    })
+                }
+            }
+        })
+    }catch (error){
+        return res.status(500).json({
+            error: true,
+            status: 500,
+            message: "Internal server error",
+        })
+    }
+})
+
 app.get("/predict", (req, res) => {
     try {
         const userId = req.query.userId
