@@ -1,0 +1,221 @@
+Name,Age,Status,Price,Methods,User Viewed,Rating,Category,Domicile,Gender,Unnamed: 10,Metadata
+Monica Putri Yani,21,Psychologist,"Rp85.000,00",Online,200,"3,5",Family,Online,Female,,"Psychologist Online 3,5 Family Female"
+Mohammad Candra,18,Counselor,"Rp55.000,00",Online,450,4,Finance,Online,Male,"Consultation Online 4,00 Finance Male",Counselor Online 4 Finance Male
+Salma fitriyani,32,Psychologist,"Rp60.000,00",Offline,120,"3,7",Finance,Gunung Kidul,Female,,"Psychologist Offline 3,7 Finance Female"
+Mega,40,Psychiatrist,"Rp125.000,00",Hybrid,350,5,Sexual,Jakarta Pusat,Female,"Psychiatrist Hybrid 5,00 Sexual Female",Psychiatrist Hybrid 5 Sexual Female
+Himawari Yuka,22,Psychiatrist,"Rp100.000,00",Online,188,"4,98",Sexual,Online,Female,"Psychiatrist Online 4,98 Sexual Female","Psychiatrist Online 4,98 Sexual Female"
+Melissa,27,Psychologist,"Rp75.000,00",Online,1200,5,Finance,Online,Female,,Psychologist Online 5 Finance Female
+Kiki Amalia Oktoviani,19,Psychologist,"Rp65.000,00",Online,1000,"3,99",Finance,Online,Female,,"Psychologist Online 3,99 Finance Female"
+Abdullah Azis,27,Psychiatrist,"Rp72.000,00",Hybrid,200,"4,49",School,Tangerang,Male,"Psychiatrist Hybrid 4,49 School Male","Psychiatrist Hybrid 4,49 School Male"
+Mohammad Dede Yusuf,22,Counselor,"Rp50.000,00",Hybrid,750,"1,9",Finance,Cirebon,Male,"Consultation Hybrid 1,90 Finance Male","Counselor Hybrid 1,9 Finance Male"
+Melina Ayudia,22,Counselor,"Rp50.000,00",Offline,350,3,Finance,Medan,Female,"Consultation Offline 3,00 Finance Female",Counselor Offline 3 Finance Female
+Ramadan Yusuf,21,Counselor,"Rp65.000,00",Offline,175,"2,98",Family,Bantul,Male,"Consultation Offline 2,98 Family Male","Counselor Offline 2,98 Family Male"
+RIfqi Ramadhni,25,Psychiatrist,"Rp72.000,00",Online,450,4,Sexual,Online,Male,"Psychiatrist Online 4,00 Sexual Male",Psychiatrist Online 4 Sexual Male
+Rifki Rammadan,31,Counselor,"Rp55.000,00",Online,320,"4,2",Family,Online,Male,"Consultation Online 4,20 Family Male","Counselor Online 4,2 Family Male"
+Monika Putri Sriyani,20,Counselor,"Rp35.000,00",Hybrid,550,2,School,Bantul,Female,"Consultation Hybrid 2,00 School  Female",Counselor Hybrid 2 School Female
+Nurhanika,25,Counselor,"Rp62.000,00",Hybrid,450,5,Friend,Cirebon,Female,"Consultation Hybrid 5,00 Friend Female",Counselor Hybrid 5 Friend Female
+Habibi Maulana Malik,27,Psychiatrist,"Rp75.000,00",Online,500,"4,75",Friend,Online,Male,"Psychiatrist Online 4,75 Friend Male","Psychiatrist Online 4,75 Friend Male"
+Yuli Saranah,32,Psychiatrist,"Rp90.000,00",Offline,800,5,Friend,Bekasi,Female,"Psychiatrist Offline 5,00 Friend Female",Psychiatrist Offline 5 Friend Female
+Mohammad Taufik Hidayattulah,25,Psychiatrist,"Rp75.000,00",Offline,750,"3,9",Friend,Bandung,Male,"Psychiatrist Offline 3,90 Friend Male","Psychiatrist Offline 3,9 Friend Male"
+Dede Hidayat,31,Psychiatrist,"Rp80.000,00",Online,750,"4,4",Friend,Online,Male,"Psychiatrist Online 4,40 Friend Male","Psychiatrist Online 4,4 Friend Male"
+Lukman Hakim,26,Counselor,"Rp57.000,00",Online,500,4,Sexual,Online,Male,"Consultation Online 4,00 Sexual Male",Counselor Online 4 Sexual Male
+Jhon David,31,Psychiatrist,"Rp72.000,00",Online,1500,"4,5",Sexual,Online,Male,"Psychiatrist Online 4,50 Sexual Male","Psychiatrist Online 4,5 Sexual Male"
+Jhonson,28,Psychiatrist,"Rp77.000,00",Online,800,"4,5",School,Online,Male,"Psychiatrist Online 4,50 School Male","Psychiatrist Online 4,5 School Male"
+Iis Noviyanti Oktova,33,Psychiatrist,"Rp100.000,00",Online,200,5,School,Online,Female,"Psychiatrist Online 5,00 School Female",Psychiatrist Online 5 School Female
+Krisna Mualana,28,Counselor,"Rp50.000,00",Online,420,"3,2",Family,Online,Male,"Consultation Online 3,20 Family Male","Counselor Online 3,2 Family Male"
+Robin,30,Psychiatrist,"Rp70.000,00",Online,500,"4,8",School,Online,Female,"Psychiatrist Online 4,80 School Female","Psychiatrist Online 4,8 School Female"
+Maulana Kevin,25,Psychologist,"Rp65.000,00",Online,320,4,School,Online,Male,,Psychologist Online 4 School Male
+Risky Hidayat,32,Counselor,"Rp88.000,00",Online,450,4,Sexual,Online,Male,"Consultation Online 4,00 Sexual Male",Counselor Online 4 Sexual Male
+Sandiyah,20,Counselor,"Rp48.000,00",Offline,300,"2,9",Finance,Cirebon,Female,"Consultation Offline 2,90 Finance Female","Counselor Offline 2,9 Finance Female"
+Purba Kiki,32,Psychiatrist,"Rp80.000,00",Online,500,"4,8",Friend,Online,Male,"Psychiatrist Online 4,80 Friend Male","Psychiatrist Online 4,8 Friend Male"
+Maki Otsuki,40,Psychologist,"Rp75.000,00",Online,1200,5,Friend,Online,Female,,Psychologist Online 5 Friend Female
+Agus Adisetia,32,Counselor,"Rp65.000,00",Online,400,"3,85",Friend,Online,Male,"Consultation Online 3,85 Friend Male","Counselor Online 3,85 Friend Male"
+Novi Azizah,27,Psychologist,"Rp58.000,00",Hybrid,750,4,Friend,Semarang,Female,,Psychologist Hybrid 4 Friend Female
+Azizah Siti,32,Psychiatrist,"Rp80.000,00",Online,500,5,Friend,Online,Female,"Psychiatrist Online 5,00 Friend Female",Psychiatrist Online 5 Friend Female
+Siti Nurul,31,Counselor,"Rp100.000,00",Online,400,5,Friend,Online,Female,"Consultation Online 5,00 Friend Female",Counselor Online 5 Friend Female
+Mohammad huda,25,Counselor,"Rp75.000,00",Online,500,"4,8",Friend,Online,Male,"Consultation Online 4,80 Friend Male","Counselor Online 4,8 Friend Male"
+Sarah,28,Counselor,"Rp80.000,00",Online,300,"4,5",Romance,Online,Female,"Consultation Online 4,50 Romance Female","Counselor Online 4,5 Romance Female"
+Andre,35,Psychologist,"Rp100.000,00",Online,1000,"4,5",Family,Online,Male,,"Psychologist Online 4,5 Family Male"
+May,22,Counselor,"Rp65.000,00",Online,250,"4,8",Sexual,Online,Female,"Consultation Online 4,80 Sexual Female","Counselor Online 4,8 Sexual Female"
+Maya,22,Psychologist,"Rp90.000,00",Online,750,"4,2",Sexual,Online,Female,,"Psychologist Online 4,2 Sexual Female"
+Budi,30,Psychologist,"Rp80.000,00",Online,400,4,Romance,Online,Male,,Psychologist Online 4 Romance Male
+Dian,25,Psychologist,"Rp60.000,00",Online,250,"4,6",Family,Online,Female,,"Psychologist Online 4,6 Family Female"
+Siti,40,Psychologist,"Rp100.000,00",Online,1000,"3,9",School,Online,Female,,"Psychologist Online 3,9 School Female"
+Fajar,32,Psychologist,"Rp75.000,00",Offline,350,"4,7",Sexual,Malang,Male,,"Psychologist Offline 4,7 Sexual Male"
+Rina,29,Counselor,"Rp65.000,00",Offline,800,"4,1",Romance,Makassar,Female,"Consultation Offline 4,10 Romance Female","Counselor Offline 4,1 Romance Female"
+Heri,23,Counselor,"Rp100.000,00",Offline,150,"4,9",Sexual,Indrmayu,Male,"Consultation Offline 4,90 Sexual Male","Counselor Offline 4,9 Sexual Male"
+Amanda,27,Counselor,"Rp70.000,00",Offline,450,"4,7",Romance,Cirebon,Female,"Consultation Offline 4,70 Romance Female","Counselor Offline 4,7 Romance Female"
+Bima,33,Counselor,"Rp90.000,00",Offline,750,4,Family,Makassar,Male,"Consultation Offline 4,00 Family Male",Counselor Offline 4 Family Male
+Nia,24,Counselor,"Rp50.000,00",Offline,300,"4,9",Sexual,Bandung,Female,"Consultation Offline 4,90 Sexual Female","Counselor Offline 4,9 Sexual Female"
+Cahyo,29,Counselor,"Rp60.000,00",Offline,400,"4,2",Romance,Wonosobo,Male,"Consultation Offline 4,20 Romance Male","Counselor Offline 4,2 Romance Male"
+Dini,26,Psychologist,"Rp80.000,00",Offline,100,"3,8",Family,Medan,Female,,"Psychologist Offline 3,8 Family Female"
+Rini,38,Psychologist,"Rp72.000,00",Offline,500,"3,8",School,Yogyakarta,Female,,"Psychologist Offline 3,8 School Female"
+Fadhil,31,Psychologist,"Rp100.000,00",Online,1200,"4,8",Sexual,Online,Male,,"Psychologist Online 4,8 Sexual Male"
+Annisa,27,Psychologist,"Rp60.000,00",Online,450,"4,1",Sexual,Online,Female,,"Psychologist Online 4,1 Sexual Female"
+Rido,23,Psychologist,"Rp80.000,00",Online,300,"4,9",Family,Online,Male,,"Psychologist Online 4,9 Family Male"
+Nika,36,Psychologist,"Rp65.000,00",Online,150,"4,1",Finance,Online,Female,,"Psychologist Online 4,1 Finance Female"
+Aditya,29,Psychiatrist,"Rp68.000,00",Online,500,"4,6",Romance,Online,Male,"Psychiatrist Online 4,60 Romance Male","Psychiatrist Online 4,6 Romance Male"
+Yulia,32,Psychiatrist,"Rp80.000,00",Hybrid,700,"4,2",Family,Online,Female,"Psychiatrist Hybrid 4,20 Family Female","Psychiatrist Hybrid 4,2 Family Female"
+Rizky,26,Psychiatrist,"Rp60.000,00",Hybrid,450,"4,8",School,Surabaya,Male,"Psychiatrist Hybrid 4,80 School  Male","Psychiatrist Hybrid 4,8 School Male"
+Putri,28,Psychiatrist,"Rp65.000,00",Hybrid,400,4,Sexual,Denpasa,Female,"Psychiatrist Hybrid 4,00 Sexual Female",Psychiatrist Hybrid 4 Sexual Female
+Ari,25,Psychiatrist,"Rp50.000,00",Hybrid,200,"3,9",Romance,Garut,Male,"Psychiatrist Hybrid 3,90 Romance Male","Psychiatrist Hybrid 3,9 Romance Male"
+Dito,35,Psychiatrist,"Rp100.000,00",Hybrid,1100,4,School,Kulon Progo,Male,"Psychiatrist Hybrid 4,00 School  Male",Psychiatrist Hybrid 4 School Male
+Sari,30,Psychiatrist,"Rp69.000,00",Offline,500,4,Family,Sleman,Female,"Psychiatrist Offline 4,00 Family Female",Psychiatrist Offline 4 Family Female
+Diko,24,Psychiatrist,"Rp90.000,00",Offline,900,5,School,Pekalongan,Male,"Psychiatrist Offline 5,00 School  Male",Psychiatrist Offline 5 School Male
+Nita,27,Psychiatrist,"Rp100.000,00",Offline,1200,5,Sexual,Bandung,Female,"Psychiatrist Offline 5,00 Sexual Female",Psychiatrist Offline 5 Sexual Female
+Adi,29,Counselor,"Rp70.000,00",Online,375,"4,6",Friend,Online,Male,"Consultation Online 4,60 Friend Male","Counselor Online 4,6 Friend Male"
+Yurisa,32,Psychologist,"Rp75.000,00",Online,450,"4,2",Finance,Online,Female,,"Psychologist Online 4,2 Finance Female"
+Riki,26,Psychiatrist,"Rp75.000,00",Online,450,"4,8",Sexual,Online,Male,"Psychiatrist Online 4,80 Sexual Male","Psychiatrist Online 4,8 Sexual Male"
+Putri Salsabila,28,Counselor,"Rp80.000,00",Online,515,4,Romance,Online,Female,"Consultation Online 4,00 Romance Female",Counselor Online 4 Romance Female
+Arif Rizqi,25,Psychologist,"Rp60.000,00",Online,480,"4,7",Family,Online,Male,,"Psychologist Online 4,7 Family Male"
+Dinda,35,Psychiatrist,"Rp100.000,00",Offline,1000,"3,8",Friend,Banda Aceh,Female,"Psychiatrist Offline 3,80 Friend Female","Psychiatrist Offline 3,8 Friend Female"
+Dimas Diko,30,Counselor,"Rp72.000,00",Offline,650,"4,5",Finance,Bantul,Male,"Consultation Offline 4,50 Finance Male","Counselor Offline 4,5 Finance Male"
+Sari,27,Psychologist,"Rp100.000,00",Offline,1200,"4,1",Sexual,Majalengka,Female,,"Psychologist Offline 4,1 Sexual Female"
+Fajar Ramadhan,24,Psychiatrist,"Rp49.000,00",Offline,15,"4,9",Romance,Cirebon,Male,"Psychiatrist Offline 4,90 Romance Male","Psychiatrist Offline 4,9 Romance Male"
+Niki,36,Counselor,"Rp100.000,00",Offline,1000,"4,7",Family,Tegal,Female,"Consultation Offline 4,70 Family Female","Counselor Offline 4,7 Family Female"
+Adi Prabowo,29,Counselor,"Rp70.000,00",Online,500,"4,6",Friend,Online,Male,"Consultation Online 4,60 Friend Male","Counselor Online 4,6 Friend Male"
+Yuli Putri,32,Psychologist,"Rp88.000,00",Hybrid,620,"4,2",Sexual,Brebes,Female,,"Psychologist Hybrid 4,2 Sexual Female"
+Rizqy Hermawan Kurniawan,26,Psychiatrist,"Rp72.000,00",Offline,555,"4,8",Family,Kulon Progo,Male,"Psychiatrist Offline 4,80 Family Male","Psychiatrist Offline 4,8 Family Male"
+Wulan Dari,25,Counselor,"Rp80.000,00",Online,900,4,School,Online,Female,"Consultation Online 4,00 School Female",Counselor Online 4 School Female
+Arif Suryanto,35,Psychologist,"Rp69.000,00",Hybrid,320,"4,7",Finance,Indrmayu,Male,,"Psychologist Hybrid 4,7 Finance Male"
+Dinda Putri Yani,30,Psychiatrist,"Rp100.000,00",Offline,1500,"3,8",Friend,Cirebon,Female,"Psychiatrist Offline 3,80 Friend Female","Psychiatrist Offline 3,8 Friend Female"
+DIko Pratama,27,Counselor,"Rp77.000,00",Online,450,"4,5",Sexual,Online,Male,"Consultation Online 4,50 Sexual Male","Counselor Online 4,5 Sexual Male"
+Sari Indah Sri,24,Psychologist,"Rp80.000,00",Hybrid,560,"4,1",Family,Subang,Female,,"Psychologist Hybrid 4,1 Family Female"
+Dajar Rahma,36,Psychiatrist,"Rp80.000,00",Offline,500,"4,9",School,Bekasi,Male,"Psychiatrist Offline 4,90 School Male","Psychiatrist Offline 4,9 School Male"
+Nita Wulan Sari,33,Counselor,"Rp100.000,00",Hybrid,1000,5,Finance,Bogor,Female,"Consultation Hybrid 5,00 Finance Female",Counselor Hybrid 5 Finance Female
+John Smith,35,Psychologist,"Rp500.000,00",Online,50,4.5,Family,New York,Male,,Psychologist Online 4.5 Family Male
+Emily Johnson,28,Counselor,"Rp700.000,00",Hybrid,30,4.0,Finance,London,Female,Consultation Hybrid 4.0 Finance Female,Counselor Hybrid 4.0 Finance Female
+Alexander Lee,40,Psychiatrist,"Rp1.000.000,00",Offline,25,4.2,Sexual,Paris,Male,Psychiatrist Offline 4.2 Sexual Male,Psychiatrist Offline 4.2 Sexual Male
+Sophia Martinez,32,Psychologist,"Rp450.000,00",Online,40,4.8,School,Berlin,Female,,Psychologist Online 4.8 School Female
+David Kim,45,Counselor,"Rp600.000,00",Hybrid,35,3.5,Finance,Tokyo,Male,Consultation Hybrid 3.5 Finance Male,Counselor Hybrid 3.5 Finance Male
+Ava Williams,28,Psychiatrist,"Rp900.000,00",Offline,20,4.7,Friend,Seoul,Female,Psychiatrist Offline 4.7 Friend Female,Psychiatrist Offline 4.7 Friend Female
+Daniel Brown,38,Psychologist,"Rp550.000,00",Online,45,4.0,School,Beijing,Male,,Psychologist Online 4.0 School Male
+Olivia Davis,31,Counselor,"Rp650.000,00",Hybrid,32,4.5,Family,Shanghai,Female,Consultation Hybrid 4.5 Family Female,Counselor Hybrid 4.5 Family Female
+Michael Nguyen,42,Psychiatrist,"Rp950.000,00",Offline,28,3.8,Sexual,Mumbai,Male,Psychiatrist Offline 3.8 Sexual Male,Psychiatrist Offline 3.8 Sexual Male
+Ella Garcia,29,Psychologist,"Rp480.000,00",Online,38,4.2,Friend,Sydney,Female,,Psychologist Online 4.2 Friend Female
+Sophie Turner,28,Psychologist,"Rp500.000,00",Online,120,4.5,Family,Jakarta,Female,,Psychologist Online 4.5 Family Female
+Alexander Johnson,35,Counselor,"Rp750.000,00",Hybrid,90,4.0,Finance,Bandung,Male,Consultation Hybrid 4.0 Finance Male,Counselor Hybrid 4.0 Finance Male
+Isabella Smith,42,Psychiatrist,"Rp1.000.000,00",Offline,150,4.8,Sexual,Surabaya,Female,Psychiatrist Offline 4.8 Sexual Female,Psychiatrist Offline 4.8 Sexual Female
+Liam Brown,30,Psychologist,"Rp600.000,00",Online,80,3.5,School,Yogyakarta,Male,,Psychologist Online 3.5 School Male
+Olivia Davis,25,Counselor,"Rp800.000,00",Hybrid,110,4.2,Finance,Medan,Female,Consultation Hybrid 4.2 Finance Female,Counselor Hybrid 4.2 Finance Female
+Aiden Wilson,38,Psychiatrist,"Rp1.200.000,00",Offline,130,4.6,Sexual,Semarang,Male,Psychiatrist Offline 4.6 Sexual Male,Psychiatrist Offline 4.6 Sexual Male
+Mia Taylor,32,Psychologist,"Rp550.000,00",Online,95,3.8,School,Makassar,Female,,Psychologist Online 3.8 School Female
+Ethan Moore,29,Counselor,"Rp700.000,00",Hybrid,105,4.1,Family,Bali,Male,Consultation Hybrid 4.1 Family Male,Counselor Hybrid 4.1 Family Male
+Isabella Anderson,40,Psychiatrist,"Rp1.100.000,00",Offline,140,4.7,Friend,Palembang,Female,Psychiatrist Offline 4.7 Friend Female,Psychiatrist Offline 4.7 Friend Female
+James Lee,26,Psychologist,"Rp580.000,00",Online,88,3.7,Sexual,Batam,Male,,Psychologist Online 3.7 Sexual Male
+Siti Nurani,28,Psychologist,"Rp500.000,00",Online,120,4.5,Family,Jakarta,Female,,Psychologist Online 4.5 Family Female
+Rizki Pratama,35,Counselor,"Rp750.000,00",Hybrid,90,4.0,Finance,Bandung,Male,Consultation Hybrid 4.0 Finance Male,Counselor Hybrid 4.0 Finance Male
+Dewi Kartini,42,Psychiatrist,"Rp1.000.000,00",Offline,150,4.8,Sexual,Surabaya,Female,Psychiatrist Offline 4.8 Sexual Female,Psychiatrist Offline 4.8 Sexual Female
+Budi Setiawan,30,Psychologist,"Rp600.000,00",Online,80,3.5,School,Yogyakarta,Male,,Psychologist Online 3.5 School Male
+Putri Utami,25,Counselor,"Rp800.000,00",Hybrid,110,4.2,Finance,Medan,Female,Consultation Hybrid 4.2 Finance Female,Counselor Hybrid 4.2 Finance Female
+Adi Wirawan,38,Psychiatrist,"Rp1.200.000,00",Offline,130,4.6,Sexual,Semarang,Male,Psychiatrist Offline 4.6 Sexual Male,Psychiatrist Offline 4.6 Sexual Male
+Laras Ayu,32,Psychologist,"Rp550.000,00",Online,95,3.8,School,Makassar,Female,,Psychologist Online 3.8 School Female
+Yoga Pratama,29,Counselor,"Rp700.000,00",Hybrid,105,4.1,Family,Bali,Male,Consultation Hybrid 4.1 Family Male,Counselor Hybrid 4.1 Family Male
+Liana Dewi,40,Psychiatrist,"Rp1.100.000,00",Offline,140,4.7,Friend,Palembang,Female,Psychiatrist Offline 4.7 Friend Female,Psychiatrist Offline 4.7 Friend Female
+Rifky Permana,26,Psychologist,"Rp580.000,00",Online,88,3.7,Sexual,Batam,Male,,Psychologist Online 3.7 Sexual Male
+Anita Susanti,28,Psychologist,"Rp500.000,00",Online,120,4.5,Family,Jakarta,Female,,Psychologist Online 4.5 Family Female
+Farhan Abdullah,35,Counselor,"Rp750.000,00",Hybrid,90,4.0,Finance,Bandung,Male,Consultation Hybrid 4.0 Finance Male,Counselor Hybrid 4.0 Finance Male
+Nadia Kusuma,42,Psychiatrist,"Rp1.000.000,00",Offline,150,4.8,Sexual,Surabaya,Female,Psychiatrist Offline 4.8 Sexual Female,Psychiatrist Offline 4.8 Sexual Female
+Arief Prabowo,30,Psychologist,"Rp600.000,00",Online,80,3.5,School,Yogyakarta,Male,,Psychologist Online 3.5 School Male
+Linda Wati,25,Counselor,"Rp800.000,00",Hybrid,110,4.2,Finance,Medan,Female,Consultation Hybrid 4.2 Finance Female,Counselor Hybrid 4.2 Finance Female
+Reza Hermawan,38,Psychiatrist,"Rp1.200.000,00",Offline,130,4.6,Sexual,Semarang,Male,Psychiatrist Offline 4.6 Sexual Male,Psychiatrist Offline 4.6 Sexual Male
+Maya Utami,32,Psychologist,"Rp550.000,00",Online,95,3.8,School,Makassar,Female,,Psychologist Online 3.8 School Female
+Irfan Maulana,29,Counselor,"Rp700.000,00",Hybrid,105,4.1,Family,Bali,Male,Consultation Hybrid 4.1 Family Male,Counselor Hybrid 4.1 Family Male
+Siska Permadi,40,Psychiatrist,"Rp1.100.000,00",Offline,140,4.7,Friend,Palembang,Female,Psychiatrist Offline 4.7 Friend Female,Psychiatrist Offline 4.7 Friend Female
+Yoga Prasetyo,26,Psychologist,"Rp580.000,00",Online,88,3.7,Sexual,Batam,Male,,Psychologist Online 3.7 Sexual Male
+Dewi Rahmawati,27,Psychologist,"Rp550.000,00",Online,115,4.2,Family,Jakarta,Female,,Psychologist Online 4.2 Family Female
+Arif Setiawan,34,Counselor,"Rp720.000,00",Hybrid,85,3.9,Finance,Surabaya,Male,Consultation Hybrid 3.9 Finance Male,Counselor Hybrid 3.9 Finance Male
+Sari Indah,41,Psychiatrist,"Rp980.000,00",Offline,145,4.7,Sexual,Bandung,Female,Psychiatrist Offline 4.7 Sexual Female,Psychiatrist Offline 4.7 Sexual Female
+Aditya Nugraha,29,Psychologist,"Rp580.000,00",Online,75,3.4,School,Yogyakarta,Male,,Psychologist Online 3.4 School Male
+Rina Purnama,24,Counselor,"Rp820.000,00",Hybrid,105,4.0,Finance,Medan,Female,Consultation Hybrid 4.0 Finance Female,Counselor Hybrid 4.0 Finance Female
+Aldi Pratama,37,Psychiatrist,"Rp1.150.000,00",Offline,125,4.5,Sexual,Semarang,Male,Psychiatrist Offline 4.5 Sexual Male,Psychiatrist Offline 4.5 Sexual Male
+Dian Saraswati,31,Psychologist,"Rp530.000,00",Online,90,3.7,School,Makassar,Female,,Psychologist Online 3.7 School Female
+Budi Santoso,28,Counselor,"Rp680.000,00",Hybrid,100,4.3,Family,Bali,Male,Consultation Hybrid 4.3 Family Male,Counselor Hybrid 4.3 Family Male
+Rani Febriani,39,Psychiatrist,"Rp1.080.000,00",Offline,135,4.8,Friend,Palembang,Female,Psychiatrist Offline 4.8 Friend Female,Psychiatrist Offline 4.8 Friend Female
+Dimas Nugroho,25,Psychologist,"Rp560.000,00",Online,95,3.6,Sexual,Batam,Male,,Psychologist Online 3.6 Sexual Male
+Rudi Pratama,30,Psychologist,"Rp500.000,00",Online,120,4.5,Family,Jakarta,Male,,Psychologist Online 4.5 Family Male
+Lia Susanti,28,Counselor,"Rp750.000,00",Hybrid,90,4.0,Finance,Bandung,Female,Consultation Hybrid 4.0 Finance Female,Counselor Hybrid 4.0 Finance Female
+Agus Setiawan,35,Psychiatrist,"Rp1.000.000,00",Offline,150,4.8,Sexual,Surabaya,Male,Psychiatrist Offline 4.8 Sexual Male,Psychiatrist Offline 4.8 Sexual Male
+Maya Wati,32,Psychologist,"Rp600.000,00",Online,80,3.5,School,Yogyakarta,Female,,Psychologist Online 3.5 School Female
+Adi Utomo,25,Counselor,"Rp800.000,00",Hybrid,110,4.2,Finance,Medan,Male,Consultation Hybrid 4.2 Finance Male,Counselor Hybrid 4.2 Finance Male
+Rina Sari,38,Psychiatrist,"Rp1.200.000,00",Offline,130,4.6,Sexual,Semarang,Female,Psychiatrist Offline 4.6 Sexual Female,Psychiatrist Offline 4.6 Sexual Female
+Bayu Prasetyo,32,Psychologist,"Rp550.000,00",Online,95,3.8,School,Makassar,Male,,Psychologist Online 3.8 School Male
+Sari Indri,29,Counselor,"Rp700.000,00",Hybrid,105,4.1,Family,Bali,Female,Consultation Hybrid 4.1 Family Female,Counselor Hybrid 4.1 Family Female
+Andi Surya,40,Psychiatrist,"Rp1.100.000,00",Offline,140,4.7,Friend,Palembang,Male,Psychiatrist Offline 4.7 Friend Male,Psychiatrist Offline 4.7 Friend Male
+Dewi Purnama,26,Psychologist,"Rp580.000,00",Online,88,3.7,Sexual,Batam,Female,,Psychologist Online 3.7 Sexual Female
+Asep Hermawan,31,Psychologist,"Rp500.000,00",Online,120,4.5,Family,Jakarta,Male,,Psychologist Online 4.5 Family Male
+Wulan Sari,28,Counselor,"Rp750.000,00",Hybrid,90,4.0,Finance,Bandung,Female,Consultation Hybrid 4.0 Finance Female,Counselor Hybrid 4.0 Finance Female
+Tono Setiawan,35,Psychiatrist,"Rp1.000.000,00",Offline,150,4.8,Sexual,Surabaya,Male,Psychiatrist Offline 4.8 Sexual Male,Psychiatrist Offline 4.8 Sexual Male
+Ratna Wati,32,Psychologist,"Rp600.000,00",Online,80,3.5,School,Yogyakarta,Female,,Psychologist Online 3.5 School Female
+Hadi Utomo,25,Counselor,"Rp800.000,00",Hybrid,110,4.2,Finance,Medan,Male,Consultation Hybrid 4.2 Finance Male,Counselor Hybrid 4.2 Finance Male
+Eka Sari,38,Psychiatrist,"Rp1.200.000,00",Offline,130,4.6,Sexual,Semarang,Female,Psychiatrist Offline 4.6 Sexual Female,Psychiatrist Offline 4.6 Sexual Female
+Budi Prasetyo,32,Psychologist,"Rp550.000,00",Online,95,3.8,School,Makassar,Male,,Psychologist Online 3.8 School Male
+Rina Susanti,29,Counselor,"Rp700.000,00",Hybrid,105,4.1,Family,Bali,Female,Consultation Hybrid 4.1 Family Female,Counselor Hybrid 4.1 Family Female
+Joko Setiawan,40,Psychiatrist,"Rp1.100.000,00",Offline,140,4.7,Friend,Palembang,Male,Psychiatrist Offline 4.7 Friend Male,Psychiatrist Offline 4.7 Friend Male
+Rani Purnama,26,Psychologist,"Rp580.000,00",Online,88,3.7,Sexual,Batam,Female,,Psychologist Online 3.7 Sexual Female
+Dian Permana,29,Psychiatrist,"Rp600.000,00",Hybrid,90,4.3,Family,Jakarta,Female,Psychiatrist Hybrid 4.3 Family Female,Psychiatrist Hybrid 4.3 Family Female
+Ahmad Wibowo,36,Psychologist,"Rp800.000,00",Offline,120,4.0,School,Bandung,Male,,Psychologist Offline 4.0 School Male
+Ratih Suryani,33,Counselor,"Rp900.000,00",Online,150,4.5,Friend,Surabaya,Female,Consultation Online 4.5 Friend Female,Counselor Online 4.5 Friend Female
+Bayu Pratama,31,Psychiatrist,"Rp700.000,00",Hybrid,80,3.8,Sexual,Yogyakarta,Male,Psychiatrist Hybrid 3.8 Sexual Male,Psychiatrist Hybrid 3.8 Sexual Male
+Siti Indah,28,Counselor,"Rp750.000,00",Online,110,4.2,Finance,Medan,Female,Consultation Online 4.2 Finance Female,Counselor Online 4.2 Finance Female
+Firman Utomo,39,Psychologist,"Rp950.000,00",Offline,130,4.7,School,Semarang,Male,,Psychologist Offline 4.7 School Male
+Nadia Susilo,34,Counselor,"Rp720.000,00",Hybrid,95,4.0,Family,Makassar,Female,Consultation Hybrid 4.0 Family Female,Counselor Hybrid 4.0 Family Female
+Rizki Hermawan,27,Psychiatrist,"Rp650.000,00",Online,85,3.5,School,Bali,Male,Psychiatrist Online 3.5 School Male,Psychiatrist Online 3.5 School Male
+Lia Purnama,42,Psychologist,"Rp1.200.000,00",Offline,140,4.8,Finance,Palembang,Female,,Psychologist Offline 4.8 Finance Female
+Eko Setiawan,26,Counselor,"Rp550.000,00",Hybrid,105,4.1,Sexual,Batam,Male,Consultation Hybrid 4.1 Sexual Male,Counselor Hybrid 4.1 Sexual Male
+Ayu Permata,28,Psychiatrist,"Rp580.000,00",Online,75,3.7,Family,Jakarta,Female,Psychiatrist Online 3.7 Family Female,Psychiatrist Online 3.7 Family Female
+Budi Santoso,35,Psychologist,"Rp820.000,00",Offline,125,4.5,Sexual,Bandung,Male,,Psychologist Offline 4.5 Sexual Male
+Rini Wati,32,Counselor,"Rp920.000,00",Hybrid,100,4.2,Finance,Surabaya,Female,Consultation Hybrid 4.2 Finance Female,Counselor Hybrid 4.2 Finance Female
+Dika Prasetya,29,Psychiatrist,"Rp680.000,00",Online,80,3.5,School,Yogyakarta,Male,Psychiatrist Online 3.5 School Male,Psychiatrist Online 3.5 School Male
+Citra Wulandari,25,Counselor,"Rp750.000,00",Hybrid,110,4.0,Family,Medan,Female,Consultation Hybrid 4.0 Family Female,Counselor Hybrid 4.0 Family Female
+Andi Sutomo,38,Psychologist,"Rp1.000.000,00",Offline,130,4.6,Sexual,Semarang,Male,,Psychologist Offline 4.6 Sexual Male
+Tina Sari,33,Counselor,"Rp600.000,00",Online,95,3.8,School,Makassar,Female,Consultation Online 3.8 School Female,Counselor Online 3.8 School Female
+Ilham Prabowo,29,Psychiatrist,"Rp730.000,00",Hybrid,105,4.1,Finance,Bali,Male,Psychiatrist Hybrid 4.1 Finance Male,Psychiatrist Hybrid 4.1 Finance Male
+Rika Susanti,36,Counselor,"Rp880.000,00",Offline,140,4.7,Friend,Palembang,Female,Consultation Offline 4.7 Friend Female,Counselor Offline 4.7 Friend Female
+Dimas Wijaya,27,Psychologist,"Rp580.000,00",Online,88,3.7,Sexual,Batam,Male,,Psychologist Online 3.7 Sexual Male
+Rina Setiawan,30,Counselor,"Rp600.000,00",Online,80,3.8,School,Jakarta,Female,Consultation Online 3.8 School Female,Counselor Online 3.8 School Female
+Arif Wibisono,35,Psychiatrist,"Rp850.000,00",Hybrid,110,4.2,Family,Bandung,Male,Psychiatrist Hybrid 4.2 Family Male,Psychiatrist Hybrid 4.2 Family Male
+Dewi Susanti,28,Psychologist,"Rp720.000,00",Offline,130,4.7,Sexual,Surabaya,Female,,Psychologist Offline 4.7 Sexual Female
+Yoga Pratama,32,Counselor,"Rp780.000,00",Online,90,4.0,Finance,Yogyakarta,Male,Consultation Online 4.0 Finance Male,Counselor Online 4.0 Finance Male
+Citra Sari,26,Psychiatrist,"Rp680.000,00",Hybrid,105,4.1,School,Medan,Female,Psychiatrist Hybrid 4.1 School Female,Psychiatrist Hybrid 4.1 School Female
+Budi Setiawan,39,Counselor,"Rp920.000,00",Offline,140,4.6,Sexual,Semarang,Male,Consultation Offline 4.6 Sexual Male,Counselor Offline 4.6 Sexual Male
+Maya Prabowo,33,Psychologist,"Rp750.000,00",Online,100,4.0,School,Makassar,Female,,Psychologist Online 4.0 School Female
+Eko Hermawan,29,Counselor,"Rp670.000,00",Hybrid,85,3.5,Finance,Bali,Male,Consultation Hybrid 3.5 Finance Male,Counselor Hybrid 3.5 Finance Male
+Sinta Utami,41,Psychiatrist,"Rp1.100.000,00",Offline,120,4.5,Friend,Palembang,Female,Psychiatrist Offline 4.5 Friend Female,Psychiatrist Offline 4.5 Friend Female
+Arief Santoso,27,Counselor,"Rp580.000,00",Online,95,3.7,Sexual,Batam,Male,Consultation Online 3.7 Sexual Male,Counselor Online 3.7 Sexual Male
+Nina Wulandari,28,Psychologist,"Rp600.000,00",Hybrid,110,4.2,Family,Jakarta,Female,,Psychologist Hybrid 4.2 Family Female
+Rian Setiawan,34,Counselor,"Rp820.000,00",Offline,125,4.5,Finance,Bandung,Male,Consultation Offline 4.5 Finance Male,Counselor Offline 4.5 Finance Male
+Ayu Wijaya,31,Psychiatrist,"Rp900.000,00",Online,75,3.5,School,Surabaya,Female,Psychiatrist Online 3.5 School Female,Psychiatrist Online 3.5 School Female
+Yoga Prasetyo,26,Counselor,"Rp720.000,00",Hybrid,105,4.1,Family,Yogyakarta,Male,Consultation Hybrid 4.1 Family Male,Counselor Hybrid 4.1 Family Male
+Lia Permata,37,Psychologist,"Rp980.000,00",Offline,135,4.8,Sexual,Medan,Female,,Psychologist Offline 4.8 Sexual Female
+Budi Hermawan,32,Counselor,"Rp700.000,00",Online,88,3.7,School,Semarang,Male,Consultation Online 3.7 School Male,Counselor Online 3.7 School Male
+Rina Purnama,29,Psychiatrist,"Rp750.000,00",Hybrid,95,4.0,Friend,Makassar,Female,Psychiatrist Hybrid 4.0 Friend Female,Psychiatrist Hybrid 4.0 Friend Female
+Andi Setiawan,40,Counselor,"Rp1.000.000,00",Offline,140,4.7,School,Bali,Male,Consultation Offline 4.7 School Male,Counselor Offline 4.7 School Male
+Wulan Sari,25,Psychologist,"Rp550.000,00",Online,75,3.5,Sexual,Palembang,Female,,Psychologist Online 3.5 Sexual Female
+Indra Pratama,29,Counselor,"Rp550.000,00",Hybrid,80,3.8,Finance,Jakarta,Male,Consultation Hybrid 3.8 Finance Male,Counselor Hybrid 3.8 Finance Male
+Dewi Permata,36,Psychiatrist,"Rp780.000,00",Offline,110,4.2,Sexual,Bandung,Female,Psychiatrist Offline 4.2 Sexual Female,Psychiatrist Offline 4.2 Sexual Female
+Rizki Santoso,31,Psychologist,"Rp650.000,00",Online,120,4.5,School,Surabaya,Male,,Psychologist Online 4.5 School Male
+Maya Wulandari,33,Counselor,"Rp720.000,00",Hybrid,90,4.0,Family,Yogyakarta,Female,Consultation Hybrid 4.0 Family Female,Counselor Hybrid 4.0 Family Female
+Budi Hermawan,28,Psychiatrist,"Rp600.000,00",Offline,130,4.7,Sexual,Medan,Male,Psychiatrist Offline 4.7 Sexual Male,Psychiatrist Offline 4.7 Sexual Male
+Lina Utami,37,Counselor,"Rp900.000,00",Online,140,4.6,Finance,Semarang,Female,Consultation Online 4.6 Finance Female,Counselor Online 4.6 Finance Female
+Yoga Prasetya,32,Psychologist,"Rp680.000,00",Hybrid,85,3.5,School,Makassar,Male,,Psychologist Hybrid 3.5 School Male
+Rini Wijaya,29,Counselor,"Rp700.000,00",Online,105,4.1,Friend,Bali,Female,Consultation Online 4.1 Friend Female,Counselor Online 4.1 Friend Female
+Adi Santoso,41,Psychiatrist,"Rp1.100.000,00",Offline,125,4.5,School,Palembang,Male,Psychiatrist Offline 4.5 School Male,Psychiatrist Offline 4.5 School Male
+Dian Wulandari,26,Counselor,"Rp580.000,00",Hybrid,95,3.7,Sexual,Batam,Female,Consultation Hybrid 3.7 Sexual Female,Counselor Hybrid 3.7 Sexual Female
+Dedy Setiawan,28,Counselor,"Rp600.000,00",Online,110,4.2,Family,Jakarta,Male,Consultation Online 4.2 Family Male,Counselor Online 4.2 Family Male
+Siti Wati,34,Psychiatrist,"Rp820.000,00",Offline,125,4.5,School,Bandung,Female,Psychiatrist Offline 4.5 School Female,Psychiatrist Offline 4.5 School Female
+Rudi Prabowo,31,Psychologist,"Rp900.000,00",Online,80,3.8,Finance,Surabaya,Male,,Psychologist Online 3.8 Finance Male
+Dewi Setiawan,26,Counselor,"Rp680.000,00",Hybrid,105,4.1,School,Yogyakarta,Female,Consultation Hybrid 4.1 School Female,Counselor Hybrid 4.1 School Female
+Arief Santosa,29,Psychiatrist,"Rp750.000,00",Offline,130,4.7,Sexual,Medan,Male,Psychiatrist Offline 4.7 Sexual Male,Psychiatrist Offline 4.7 Sexual Male
+Maya Prabawati,33,Counselor,"Rp720.000,00",Online,95,3.7,School,Semarang,Female,Consultation Online 3.7 School Female,Counselor Online 3.7 School Female
+Adi Permana,40,Psychologist,"Rp1.000.000,00",Hybrid,110,4.2,Friend,Makassar,Male,,Psychologist Hybrid 4.2 Friend Male
+Rina,27,Psychiatrist,"Rp580.000,00",Offline,140,4.6,Family,Bali,Female,Psychiatrist Offline 4.6 Family Female,Psychiatrist Offline 4.6 Family Female
+Santoso,30,Counselor,"Rp700.000,00",Online,88,3.7,Sexual,Palembang,Male,Consultation Online 3.7 Sexual Male,Counselor Online 3.7 Sexual Male
+John Smith,30,Psychologist,"Rp500.000,00",Online,100,4.5,Family,New York,Male,,Psychologist Online 4.5 Family Male
+Budi Setiawan,28,Psychologist,"Rp500.000,00",Online,100,4.5,Family,Jakarta,Male,,Psychologist Online 4.5 Family Male
+Adi Nugroho,40,Psychiatrist,"Rp1.000.000,00",Offline,80,4.8,Sexual,Bandung,Male,Psychiatrist Offline 4.8 Sexual Male,Psychiatrist Offline 4.8 Sexual Male
+Salman,40,Psychiatrist,"Rp1.000.000,00",Offline,80,4.8,Sexual,Bandung,Male,Psychiatrist Offline 4.8 Sexual Male,Psychiatrist Offline 4.8 Sexual Male
+Rizqi,40,Psychiatrist,"Rp1.000.000,00",Offline,80,4.8,Sexual,Bandung,Male,Psychiatrist Offline 4.8 Sexual Male,Psychiatrist Offline 4.8 Sexual Male
+Gaskur,40,Psychiatrist,"Rp1.000.000,00",Offline,80,4.8,Sexual,Bandung,Male,Psychiatrist Offline 4.8 Sexual Male,Psychiatrist Offline 4.8 Sexual Male
+Rifando,40,Psychiatrist,"Rp1.000.000,00",Offline,80,4.8,Sexual,Bandung,Male,Psychiatrist Offline 4.8 Sexual Male,Psychiatrist Offline 4.8 Sexual Male
+Rifando purba,40,Psychiatrist,"Rp1.000.000,00",Offline,80,4.8,Sexual,Bandung,Male,Psychiatrist Offline 4.8 Sexual Male,Psychiatrist Offline 4.8 Sexual Male
