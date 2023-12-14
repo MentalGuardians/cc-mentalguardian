@@ -188,25 +188,30 @@ app.post('/predict', async (req, res) => {
 
 app.post("/content-recommender", async (req, res) => {
     try {
-        const content = req.body.content
-        const url = 'https://contentrecommender-earot3fyaq-de.a.run.app/contentrecommender'
+        const content = req.body.content;
+        const url = 'https://contentrecommenderrev-earot3fyaq-de.a.run.app/contentrecommender';
         const requestBody = {
             content: content,
-        }
+        };
 
         const response = await axios.post(url, requestBody, {
             headers: {
                 'Content-Type': 'application/json'
             }
-        })
+        });
 
-        const responseData = {
+        // Menghilangkan karakter escape sebelum parsing JSON
+        const cleanedResponse = response.data.replace(/NaN/g, 'null');
+        // Mengonversi string JSON yang sudah dibersihkan menjadi objek JavaScript
+        const responseData = JSON.parse(cleanedResponse);
+
+        // Mengirimkan respons dengan objek JavaScript yang sudah diubah
+        const responseFinal = {
             statusCode: response.status,
-            ...response.data,
+            ...responseData,
             message: 'Request successful',
         }
-
-        return res.status(201).json(responseData)
+        return res.status(201).json(responseFinal);
     } catch (error) {
         return res.status(500).json({
             error: true,
@@ -216,10 +221,11 @@ app.post("/content-recommender", async (req, res) => {
     }
 })
 
+
 app.post("/expert-recommender", async (req, res) => {
     try {
         const expert = req.body.expert
-        const url = 'https://expertrecommender-earot3fyaq-de.a.run.app/expertrecommender'
+        const url = 'https://expertrecommenderrev-earot3fyaq-de.a.run.app/expertrecommender'
         const requestBody = {
             expert: expert,
         }
