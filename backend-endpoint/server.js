@@ -242,6 +242,50 @@ app.post("/content-recommender", async (req, res) => {
     }
 })
 
+app.get("/content-recommender", (req, res) => {
+    try{
+        const contentId = req.query.contentId
+
+        db.query('SELECT * FROM contents WHERE contentId = ?', [contentId], (error, result) => {
+            if(error){
+                return res.status(500).json({
+                    error: true,
+                    status: 500,
+                    message: "Query error"
+                })
+            }else{
+                if(result.length > 0){
+                    return res.status(200).json({
+                        error: false,
+                        status: 200,
+                        contentId: contentId,
+                        videoId: result[0]["Video ID"],
+                        title: result[0].Title,
+                        author: result[0].Author,
+                        views: result[0].Views,
+                        likes: result[0].Likes,
+                        comments: result[0].Comments,
+                        labels: result[0].Labels,
+                        message: "Request successful"
+                    })
+                }else{
+                    return res.status(500).json({
+                        error: true,
+                        status: 500,
+                        message: "Content not found"
+                    })
+                }
+            }
+        })
+    }catch (error){
+        return res.status(500).json({
+            error: true,
+            status: 500,
+            message: "Internal server error",
+        })
+    }
+})
+
 app.post("/expert-recommender", async (req, res) => {
     try {
         const expert = req.body.expert
@@ -455,7 +499,7 @@ app.put("/profile", (req, res) => {
     }
 })
 
-app.post('/booking', async (req, res) => {
+app.post("/booking", async (req, res) => {
     try {
         const userId = req.body.userId
         const teraphistId = req.body.therapistId
