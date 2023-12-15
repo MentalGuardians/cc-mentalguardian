@@ -306,18 +306,18 @@ app.get("/content-recommender", (req, res) => {
                         error: false,
                         status: 200,
                         message: "Request successful",
-                        data: result.map(item => ({
-                            Author: item.Author,
-                            Comments: item.Comments,
-                            Labels: item.Labels,
-                            Likes: item.Likes,
-                            Thumbnail: item.thumbnail,
-                            Title: item.Title,
-                            VideoId: item["Video ID"],
-                            Views: item.Views,
+                        data: result.length > 0 ? {
+                            Author: result[0].Author,
+                            Comments: result[0].Comments,
+                            Labels: result[0].Labels,
+                            Likes: result[0].Likes,
+                            Thumbnail: result[0].thumbnail,
+                            Title: result[0].Title,
+                            VideoId: result[0]["Video ID"],
+                            Views: result[0].Views,
                             contentId: contentId,
-                        }))
-                    })
+                        } : null
+                    });                    
                 }else{
                     return res.status(500).json({
                         error: true,
