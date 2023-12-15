@@ -237,45 +237,57 @@ app.post("/content-recommender", async (req, res) => {
 
         const cleanedResponse = response.data.replace(/NaN/g, 'null')
         const responseData = JSON.parse(cleanedResponse)
-        
+
         let contentIds = []
 
         const queryPromises = responseData.result.map(async (result) => {
             return new Promise((resolve, reject) => {
-                db.query('SELECT contentId FROM contents WHERE `Video ID` = ?', [result["Video ID"]], (error, resultQuery) => {
+                db.query('SELECT thumbnail,contentId FROM contents WHERE `Video ID` = ?', [result["Video ID"]], (error, resultQuery) => {
                     if (error) {
-                        reject(error)
+                        reject(error);
                     } else {
-                        const contentId = resultQuery[0].contentId
-                        contentIds.push(contentId)
-                        resolve()
+                        const contentId = resultQuery[0].contentId;
+                        contentIds.push(contentId);
+        
+                        if (resultQuery[0].thumbnail == null) {
+                            db.query('UPDATE contents SET thumbnail = ? WHERE contentId = ?', [result.Thumbnail, resultQuery[0].contentId], (error, resultInsert) => {
+                                if (error) {
+                                    // Instead of returning a response here, you can send an error response and break the loop
+                                    reject(error);
+                                } else {
+                                    resolve();
+                                }
+                            });
+                        } else {
+                            resolve();
+                        }
                     }
                 });
             });
         });
-    
-        // Menunggu semua operasi query selesai
+        
+        // Wait for all query operations to complete
         await Promise.all(queryPromises);
-
+    
         for (let i = 0; i < responseData.result.length; i++) {
             responseData.result[i].contentId = contentIds[i];
         }
-
+    
         const responseFinal = {
             statusCode: response.status,
             ...responseData,
             message: 'Request successful',
         }
-
-        return res.status(201).json(responseFinal);
+    
+        res.status(201).json(responseFinal);
     } catch (error) {
-        return res.status(500).json({
+        res.status(500).json({
             error: true,
             status: 500,
             message: "Internal server error",
-        })
+        });
     }
-})
+});
 
 app.get("/content-recommender", (req, res) => {
     try{
@@ -293,15 +305,18 @@ app.get("/content-recommender", (req, res) => {
                     return res.status(200).json({
                         error: false,
                         status: 200,
-                        contentId: contentId,
-                        videoId: result[0]["Video ID"],
-                        title: result[0].Title,
-                        author: result[0].Author,
-                        views: result[0].Views,
-                        likes: result[0].Likes,
-                        comments: result[0].Comments,
-                        labels: result[0].Labels,
-                        message: "Request successful"
+                        message: "Request successful",
+                        data: result.map(item => ({
+                            Author: item.Author,
+                            Comments: item.Comments,
+                            Labels: item.Labels,
+                            Likes: item.Likes,
+                            Thumbnail: item.thumbnail,
+                            Title: item.Title,
+                            VideoId: item["Video ID"],
+                            Views: item.Views,
+                            contentId: contentId,
+                        }))
                     })
                 }else{
                     return res.status(500).json({
