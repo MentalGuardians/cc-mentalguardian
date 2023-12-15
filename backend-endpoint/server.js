@@ -313,7 +313,7 @@ app.get("/content-recommender", (req, res) => {
                             Likes: result[0].Likes,
                             Thumbnail: result[0].thumbnail,
                             Title: result[0].Title,
-                            VideoId: result[0]["Video ID"],
+                            ["Video ID"]: result[0]["Video ID"],
                             Views: result[0].Views,
                             contentId: contentId,
                         } : null
@@ -405,18 +405,20 @@ app.get("/expert-recommender", (req, res) => {
                     return res.status(200).json({
                         error: false,
                         status: 200,
-                        therapistId: therapistId,
-                        name: result[0].Name,
-                        age: result[0].Age,
-                        status: result[0].Status,
-                        price: result[0].Price,
-                        method: result[0].Methods,
-                        userViewed: result[0]["User Viewed"],
-                        rating: result[0].Rating,
-                        category: result[0].Category,
-                        domicile: result[0].Domicile,
-                        gender: result[0].Gender,
-                        message: "Request successful"
+                        message: "Request successful",
+                        data: result.length > 0 ? {
+                            Age: result[0].Age,
+                            Category: result[0].Category,
+                            Domicile: result[0].Domicile,
+                            Gender: result[0].Gender,
+                            Methods: result[0].Methods,
+                            Name: result[0].Name,
+                            Price: result[0].Price,
+                            Rating: result[0].Rating,
+                            Status: result[0].Status,
+                            ["User Viewed"]: result[0]["User Viewed"],
+                            therapistId: therapistId,
+                        } : null
                     })
                 }else{
                     return res.status(500).json({
@@ -583,9 +585,8 @@ app.post("/booking", async (req, res) => {
         if(jenis_konseling == "Offline" || jenis_konseling == "offline" || jenis_konseling == "OFFLINE"){
             link = null
         }
-        let status = "active"
 
-        db.query('INSERT INTO history_booking SET ?', {bookingId:bookingId, tanggal_booking: formattedDate, tanggal_konseling: tanggal_konseling, jam_konseling: jam_konseling, jenis_konseling : jenis_konseling, link: link, status: status, userId: userId, therapistId: teraphistId}, (error) => {
+        db.query('INSERT INTO history_booking SET ?', {bookingId:bookingId, tanggal_booking: formattedDate, tanggal_konseling: tanggal_konseling, jam_konseling: jam_konseling, jenis_konseling : jenis_konseling, link: link, status: 1, userId: userId, therapistId: teraphistId}, (error) => {
             if(error){
                 console.log(error)
                 return res.status(500).json({
@@ -615,7 +616,7 @@ app.get("/booking", (req, res) => {
     try {
         const userId = req.query.userId
 
-        db.query('SELECT * FROM history_booking WHERE userId = ? ', [userId], (error, result) => {
+        db.query('SELECT * FROM history_booking WHERE userId = ? ORDER BY STR_TO_DATE(tanggal_booking, "%Y-%m-%d %H:%i") DESC', [userId], (error, result) => {
             if (error) {
                 return res.status(500).json({
                     error: true,
@@ -627,16 +628,33 @@ app.get("/booking", (req, res) => {
                     error: false,
                     status: 200,
                     userId: userId,
-                    historyBooking: result.map(item => ({
-                        bookingId: item.bookingId,
-                        tanggal_booking: item.tanggal_booking,
-                        tanggal_konseling: item.tanggal_konseling,
-                        jam_konseling: item.jam_konseling,
-                        jenis_konseling: item.jenis_konseling,
-                        link: item.link,
-                        status: item.status === "active" ? 1 : 0,
-                        therapistId: item.therapistId
-                    })),
+                    historyBooking: result.map(item => {
+                        const combinedDateTimeString = `${item.tanggal_konseling} ${item.jam_konseling}`;
+                        const combinedDateTime = new Date(combinedDateTimeString);
+                
+                        let status;
+                        if (item.status == 1) {
+                            const currentDate = new Date();
+                            if (currentDate > combinedDateTime) {
+                                status = "Finished";
+                            } else {
+                                status = "Scheduled";
+                            }
+                        } else {
+                            status = "Canceled";
+                        }
+                
+                        return {
+                            bookingId: item.bookingId,
+                            tanggal_booking: item.tanggal_booking,
+                            tanggal_konseling: item.tanggal_konseling,
+                            jam_konseling: item.jam_konseling,
+                            jenis_konseling: item.jenis_konseling,
+                            link: item.link,
+                            status: status,
+                            therapistId: item.therapistId
+                        }
+                    }),
                     message: "Request successful"
                 })
             }
